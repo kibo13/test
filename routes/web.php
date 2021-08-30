@@ -38,9 +38,11 @@ use App\Http\Controllers\Admin\OrderController;
 // news
 use App\Http\Controllers\Admin\NewsController;
 
+// translates
+use App\Http\Controllers\Admin\TranslateController;
+
 // profile
 use App\Http\Controllers\Admin\UserController;
-use App\Models\Photo;
 
 Route::group(
   [
@@ -119,6 +121,9 @@ Route::group(
 
       // news
       Route::resource('/news', NewsController::class);
+
+      // translates
+      Route::resource('/translates', TranslateController::class);
 
       // profile
       Route::get('/profile', [UserController::class, 'index'])->name('users.index');

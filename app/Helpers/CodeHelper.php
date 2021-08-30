@@ -4,8 +4,8 @@ use Carbon\Carbon;
 
 function getCode()
 {
-  // current date 
-  $current = Carbon::now()->addHour(5);
+  // current date
+  $current = Carbon::now()->addHour(6);
 
   // code
   $code = preg_replace('/[- :]/', '', $current);

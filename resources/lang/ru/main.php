@@ -17,6 +17,7 @@ return [
   'site'              => 'Сайт',
   'bar'               => 'Бар',
   'cabins'            => 'Кабины',
+  'translates'        => 'Переводы',
 
   // sections
   'home'              => 'Главная',

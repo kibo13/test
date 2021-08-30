@@ -8,10 +8,10 @@
 
   <div class="bk-btn-group">
     <a class="btn btn-outline-primary" href="{{ route('continents.dishes.create') }}" >
-      {{ __('main.create') }}
+      {{ getTranslate('create') }}
     </a>
     <a class="btn btn-outline-secondary" href="{{ route('continents.index') }}" >
-      {{ __('main.kitchens') }}
+      {{ getTranslate('kitchens') }}
     </a>
   </div>
 
@@ -21,10 +21,10 @@
     <thead class="thead-light">
       <tr>
         <th scope="col">#</th>
-        <th scope="col" class="w-100" style="min-width: 300px;">{{ __('main.menu') }}</th>
-        <th scope="col" class="" style="min-width: 120px;">{{ __('main.price') }}</th>
-        <th scope="col" class="no-sort" style="min-width: 120px;">{{ __('main.photo') }}</th>
-        <th scope="col" class="no-sort">{{ __('main.t_action') }}</th></th>
+        <th scope="col" class="w-100" style="min-width: 300px;">{{ getTranslate('menu') }}</th>
+        <th scope="col" class="" style="min-width: 120px;">{{ getTranslate('price') }}</th>
+        <th scope="col" class="no-sort" style="min-width: 120px;">{{ getTranslate('photo') }}</th>
+        <th scope="col" class="no-sort">{{ getTranslate('t_action') }}</th></th>
       </tr>
     </thead>
     <tbody>
@@ -68,11 +68,11 @@
         <td>
           @if(is_null($dish->image))
           <a href="{{ route('continents.dishes.edit', $dish) }}">
-            <span class="text-primary">{{ __('main.upload') }}</span>
+            <span class="text-primary">{{ getTranslate('upload') }}</span>
           </a>
           @else
           <div class="bk-dishes-zoom">
-            {{ __('main.look') }}
+            {{ getTranslate('look') }}
             <img
               class="bk-dishes-zoom__img"
               src="{{ asset('images/' . $dish->image) }}"
@@ -87,7 +87,7 @@
             <a
               class="bk-btn-actions__link bk-btn-actions__link--edit btn btn-warning"
               href="{{ route('continents.dishes.edit', $dish) }}"
-              data-tip="{{ __('main.t_edit') }}" ></a>
+              data-tip="{{ getTranslate('t_edit') }}" ></a>
             <a
               class="bk-btn-actions__link bk-btn-actions__link--delete btn btn-danger"
               href="javascript:void(0)"
@@ -95,7 +95,7 @@
               data-table-name="dish"
               data-toggle="modal"
               data-target="#bk-delete-modal"
-              data-tip="{{ __('main.t_delete') }}" ></a>
+              data-tip="{{ getTranslate('t_delete') }}" ></a>
           </div>
         </td>
       </tr>

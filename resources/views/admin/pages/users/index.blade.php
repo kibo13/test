@@ -1,10 +1,10 @@
 @extends('admin.layouts.master')
 
-@section('title', __('main.profile'))
+@section('title', getTranslate('profile'))
 
 @section('content')
 <section id="profile-index" class="section">
-  <h2 class="mb-3"> {{ __('main.edit_record') }}</h2>
+  <h2 class="mb-3"> {{ getTranslate('edit_record') }}</h2>
 
   @if(session()->has('success'))
   <div class="alert alert-success" role="alert">
@@ -20,7 +20,7 @@
     <div>
       @method('PUT')
 
-      <div class="bk-form__wrapper" data-info="{{ __('main.f_info') }}">
+      <div class="bk-form__wrapper" data-info="{{ getTranslate('f_info') }}">
         <div class="bk-form__block">
           <!-- /.login -->
           <h6 class="bk-form__title">{{ __('auth.name') }}</h6>
@@ -92,7 +92,7 @@
       <div class="form-group">
         <button
           class="btn btn-outline-success"
-          type="submit">{{ __('main.save') }}</button>
+          type="submit">{{ getTranslate('save') }}</button>
       </div>
     </div>
   </form>

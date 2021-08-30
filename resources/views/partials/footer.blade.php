@@ -53,7 +53,7 @@
         </div>
       </div>
       <div class="footer__rights">
-        {{ __('main.app') }} <?php echo date('Y'); ?> © {{ __('main.rights') }}
+        {{ getTranslate('app') }} <?php echo date('Y'); ?> © {{ getTranslate('rights') }}
       </div>
     </footer>
   </div>

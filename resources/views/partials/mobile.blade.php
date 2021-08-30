@@ -1,6 +1,6 @@
 <div class="mobile__menu closed">
   <div class="container-md">
-    <div class="our__menu--title">{{ __('main.o_menu') }}</div>
+    <div class="our__menu--title">{{ getTranslate('o_menu') }}</div>
     <div class="mobile__menu--slider">
       <div class="menu__slider--title">
         @if(getCurrentLang() === 'ru')

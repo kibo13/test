@@ -1,14 +1,14 @@
 @extends('admin.layouts.master')
 
-@section('title', __('main.news'))
+@section('title', getTranslate('news'))
 
 @section('content')
 <section id="news-index" class="bk-page section info-form">
-  <h2 class="mb-3">{{ __('main.news') }}</h2>
+  <h2 class="mb-3">{{ getTranslate('news') }}</h2>
 
   <div class="bk-btn-group">
     <a class="btn btn-outline-primary" href="{{ route('news.create') }}" >
-      {{ __('main.create') }}
+      {{ getTranslate('create') }}
     </a>
   </div>
 
@@ -18,10 +18,10 @@
     <thead class="thead-light">
       <tr>
         <th scope="col">#</th>
-        <th scope="col" class="w-25">{{ __('main.date_publish') }}</th>
-        <th scope="col" class="w-25">{{ __('main.top') }}</th>
-        <th scope="col" class="w-50 no-sort">{{ __('main.t_desc') }}</th>
-        <th scope="col" class="no-sort">{{ __('main.t_action') }}</th></th>
+        <th scope="col" class="w-25">{{ getTranslate('date_publish') }}</th>
+        <th scope="col" class="w-25">{{ getTranslate('top') }}</th>
+        <th scope="col" class="w-50 no-sort">{{ getTranslate('t_desc') }}</th>
+        <th scope="col" class="no-sort">{{ getTranslate('t_action') }}</th></th>
       </tr>
     </thead>
     <tbody>
@@ -49,7 +49,7 @@
             @endif
             <button
               class="bk-btn-info__triangle bk-btn-info__triangle--down"
-              title="{{ __('main.more') }}">
+              title="{{ getTranslate('more') }}">
             </button>
           </div>
         </td>
@@ -58,7 +58,7 @@
             <a
               class="bk-btn-actions__link bk-btn-actions__link--edit btn btn-warning"
               href="{{ route('news.edit', $news) }}"
-              data-tip="{{ __('main.t_edit') }}" ></a>
+              data-tip="{{ getTranslate('t_edit') }}" ></a>
             <a
               class="bk-btn-actions__link bk-btn-actions__link--delete btn btn-danger"
               href="javascript:void(0)"
@@ -66,7 +66,7 @@
               data-table-name="news"
               data-toggle="modal"
               data-target="#bk-delete-modal"
-              data-tip="{{ __('main.t_delete') }}" ></a>
+              data-tip="{{ getTranslate('t_delete') }}" ></a>
           </div>
         </td>
       </tr>

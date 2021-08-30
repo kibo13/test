@@ -4,14 +4,14 @@
 
 @section('content')
 <section id="dish-index" class="bk-page section">
-  <h2 class="mb-3">{{ __('main.cat_menu') }}</h2>
+  <h2 class="mb-3">{{ getTranslate('cat_menu') }}</h2>
 
   <div class="bk-btn-group">
     <a class="btn btn-outline-primary" href="{{ route('continents.assortments.create') }}" >
-      {{ __('main.create') }}
+      {{ getTranslate('create') }}
     </a>
     <a class="btn btn-outline-secondary" href="{{ route('continents.index') }}" >
-      {{ __('main.kitchens') }}
+      {{ getTranslate('kitchens') }}
     </a>
   </div>
 
@@ -21,8 +21,8 @@
     <thead class="thead-light">
       <tr>
         <th scope="col">#</th>
-        <th scope="col" class="w-100">{{ __('main.t_name') }}</th>
-        <th scope="col" class="no-sort">{{ __('main.t_action') }}</th></th>
+        <th scope="col" class="w-100">{{ getTranslate('t_name') }}</th>
+        <th scope="col" class="no-sort">{{ getTranslate('t_action') }}</th></th>
       </tr>
     </thead>
     <tbody>
@@ -43,7 +43,7 @@
             <a
               class="bk-btn-actions__link bk-btn-actions__link--edit btn btn-warning"
               href="{{ route('continents.assortments.edit', $assortment) }}"
-              data-tip="{{ __('main.t_edit') }}" ></a>
+              data-tip="{{ getTranslate('t_edit') }}" ></a>
             <a
               class="bk-btn-actions__link bk-btn-actions__link--delete btn btn-danger"
               href="javascript:void(0)"
@@ -51,7 +51,7 @@
               data-table-name="assortment"
               data-toggle="modal"
               data-target="#bk-delete-modal"
-              data-tip="{{ __('main.t_delete') }}" ></a>
+              data-tip="{{ getTranslate('t_delete') }}" ></a>
           </div>
         </td>
       </tr>

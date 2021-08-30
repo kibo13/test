@@ -157,7 +157,7 @@
                   data-id="{{ $item->id }}"
                   {{-- href="{{ route('carts.create', $item->id) }}" --}}
                   >
-                  {{ __('main.buy') }}
+                  {{ getTranslate('buy') }}
                 </a>
               </div>
             </div>

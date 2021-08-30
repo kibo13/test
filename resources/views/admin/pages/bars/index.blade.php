@@ -4,14 +4,14 @@
 
 @section('content')
 <section id="bar-index" class="bk-page section info-form">
-  <h2 class="mb-3">{{ __('main.bars') }}</h2>
+  <h2 class="mb-3">{{ getTranslate('bars') }}</h2>
 
   <div class="bk-btn-group">
     <a class="btn btn-outline-primary" href="{{ route('bars.create') }}" >
-      {{ __('main.create') }}
+      {{ getTranslate('create') }}
     </a>
     <a class="btn btn-outline-secondary" href="{{ route('bars.galleries.index') }}">
-      {{ __('main.galleries') }}
+      {{ getTranslate('galleries') }}
     </a>
   </div>
 
@@ -21,9 +21,9 @@
     <thead class="thead-light">
       <tr>
         <th scope="col">#</th>
-        <th scope="col" class="w-25">{{ __('main.t_name') }}</th>
-        <th scope="col" class="w-75 no-sort">{{ __('main.t_desc') }}</th>
-        <th scope="col" class="no-sort">{{ __('main.t_action') }}</th></th>
+        <th scope="col" class="w-25">{{ getTranslate('t_name') }}</th>
+        <th scope="col" class="w-75 no-sort">{{ getTranslate('t_desc') }}</th>
+        <th scope="col" class="no-sort">{{ getTranslate('t_action') }}</th></th>
       </tr>
     </thead>
     <tbody>
@@ -50,7 +50,7 @@
             @endif
             <button
               class="bk-btn-info__triangle bk-btn-info__triangle--down"
-              title="{{ __('main.more') }}">
+              title="{{ getTranslate('more') }}">
             </button>
           </div>
         </td>
@@ -59,7 +59,7 @@
             <a
               class="bk-btn-actions__link bk-btn-actions__link--edit btn btn-warning"
               href="{{ route('bars.edit', $bar) }}"
-              data-tip="{{ __('main.t_edit') }}" ></a>
+              data-tip="{{ getTranslate('t_edit') }}" ></a>
             <a
               class="bk-btn-actions__link bk-btn-actions__link--delete btn btn-danger"
               href="javascript:void(0)"
@@ -67,7 +67,7 @@
               data-table-name="bar"
               data-toggle="modal"
               data-target="#bk-delete-modal"
-              data-tip="{{ __('main.t_delete') }}" ></a>
+              data-tip="{{ getTranslate('t_delete') }}" ></a>
           </div>
         </td>
       </tr>

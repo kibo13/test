@@ -6,9 +6,9 @@
 <section id="photo-form" class="section img-form">
   <h2 class="mb-3">
     @isset($photo)
-      {{ __('main.edit_record') }}
+      {{ getTranslate('edit_record') }}
     @else
-    {{ __('main.add_record') }}
+    {{ getTranslate('add_record') }}
     @endisset
   </h2>
 
@@ -27,14 +27,14 @@
         @method('PUT')
       @endisset
 
-      <div class="bk-form__wrapper" data-info="{{ __('main.f_info') }}">
+      <div class="bk-form__wrapper" data-info="{{ getTranslate('f_info') }}">
         <div class="bk-form__block">
 
           <!-- /.vip_id -->
-          <h6 class="bk-form__title">{{ __('main.cabins') }}</h6>
+          <h6 class="bk-form__title">{{ getTranslate('cabins') }}</h6>
           <div class="bk-form__field-300 mb-2">
             <select class="form-control" name="vip_id">
-              <option disabled selected>{{ __('main.select_cabin') }}</option>
+              <option disabled selected>{{ getTranslate('select_cabin') }}</option>
               @foreach($vips as $vip)
               <option
                 value="{{ $vip->id }}"
@@ -56,7 +56,7 @@
           </div>
 
           <!-- /.image -->
-          <h6 class="bk-form__title">{{ __('main.image') }}</h6>
+          <h6 class="bk-form__title">{{ getTranslate('image') }}</h6>
           <div class="bk-form__field-300">
             <div class="bk-form__file">
               <input
@@ -65,12 +65,12 @@
                 name="note"
                 type="text"
                 value="@isset($photo) {{ $photo->note }} @endisset"
-                placeholder="{{ __('main.nofile') }}" />
+                placeholder="{{ getTranslate('nofile') }}" />
 
               <button
                 type="button"
                 class="btn btn-primary bk-form__file--btn">
-                {{ __('main.upload') }}
+                {{ getTranslate('upload') }}
               </button>
 
               <input
@@ -88,11 +88,11 @@
       <div class="form-group">
         <button
           class="btn btn-outline-success"
-          type="submit">{{ __('main.save') }}</button>
+          type="submit">{{ getTranslate('save') }}</button>
         <a
           class="btn btn-outline-secondary"
           href="{{ route('vips.photos.index') }}">
-          {{ __('main.back') }}
+          {{ getTranslate('back') }}
         </a>
       </div>
     </div>

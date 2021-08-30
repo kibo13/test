@@ -11,7 +11,7 @@
  Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 30/08/2021 16:19:55
+ Date: 31/08/2021 00:12:09
 */
 
 SET NAMES utf8mb4;
@@ -538,7 +538,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 81 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 82 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of migrations
@@ -570,6 +570,7 @@ INSERT INTO `migrations` VALUES (77, '2021_08_15_181208_create_orders_table', 21
 INSERT INTO `migrations` VALUES (78, '2021_08_15_181218_create_dish_order_table', 21);
 INSERT INTO `migrations` VALUES (79, '2021_08_26_143100_alter_table_vips', 22);
 INSERT INTO `migrations` VALUES (80, '2021_08_30_085803_create_photos_table', 23);
+INSERT INTO `migrations` VALUES (81, '2021_08_30_112125_create_translates_table', 24);
 
 -- ----------------------------
 -- Table structure for news
@@ -712,6 +713,143 @@ CREATE TABLE `teams`  (
 -- Records of teams
 -- ----------------------------
 INSERT INTO `teams` VALUES (6, 9, 'Теймураз Тагвиашвили', 'Теймураз Тагвиашвили', 'Teimuraz Tagviashvili', 'Шеф-повар грузинской кухни гастробара VOKZAL, владелец и бренд-шеф ресторана  грузинской кухни «Shavlego», шеф-повар координатор сети ресторанов «Дареджани» и Georgian reastaurant by Parmogiano Group.', 'VOKZAL gastrobar-да грузин тағамдарының аспазшысы, шавлего грузин тағамдары мейрамханасының иесі және бренд-аспазшысы, Дарежани мейрамханалар желісінің аспаз үйлестірушісі және Parmogiano Group грузин рестораны.', 'Georgian cuisine at VOKZAL gastrobar, owner and brand chef of Shavlego Georgian cuisine restaurant, chef coordinator of Darejani restaurant chain and Georgian restaurant Parmogiano Group.', 'teams/9yHH379t9vjNt7cB0gBTFlZcxBmIbRgIQRkmeprk.jpg', 'team1.jpg', '2021-08-10 19:04:43', '2021-08-29 14:16:31');
+
+-- ----------------------------
+-- Table structure for translates
+-- ----------------------------
+DROP TABLE IF EXISTS `translates`;
+CREATE TABLE `translates`  (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name_ru` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `name_kk` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `name_en` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `note` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 118 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of translates
+-- ----------------------------
+INSERT INTO `translates` VALUES (1, 'ourc', 'Наши контакты', 'Біздің байланыстар', 'Our contacts', 'Наши контакты', NULL, '2021-08-30 15:04:55');
+INSERT INTO `translates` VALUES (2, 'news', 'Новости', 'Жаңалықтар', 'News', 'Новости', '2021-08-30 16:19:08', '2021-08-30 16:20:59');
+INSERT INTO `translates` VALUES (3, 'profile', 'Профиль', 'Профиль', 'Profile', 'Профиль', '2021-08-30 16:21:57', '2021-08-30 16:21:57');
+INSERT INTO `translates` VALUES (4, 'admin', 'Админ-панель', 'Әкімші тақтасы', 'Admin panel', 'Админ-панель', '2021-08-30 16:23:34', '2021-08-30 16:23:34');
+INSERT INTO `translates` VALUES (5, 'see', 'Посмотреть сайт', 'Сайтты қарау', 'View site', 'Посмотреть сайт', '2021-08-30 16:25:15', '2021-08-30 16:25:15');
+INSERT INTO `translates` VALUES (6, 'exit', 'Выйти', 'Шығу', 'Log off', 'Выйти', '2021-08-30 16:25:57', '2021-08-30 16:25:57');
+INSERT INTO `translates` VALUES (7, 'rights', 'Все права защищены', 'Барлық құқықтар сақталған', 'All rights reserved', 'Все права защищены', '2021-08-30 16:26:56', '2021-08-30 16:26:56');
+INSERT INTO `translates` VALUES (8, 'ch_room', 'Детский зал', 'Балалар залы', 'Children\'s hall', 'Детский зал', '2021-08-30 16:28:20', '2021-08-30 16:28:20');
+INSERT INTO `translates` VALUES (9, 'app', 'Гастробар Vokzal', 'Гастробар Vokzal', 'Gastrobar Vokzal', 'Гастробар Vokzal', '2021-08-30 16:31:27', '2021-08-30 16:31:27');
+INSERT INTO `translates` VALUES (10, 'fd_room', 'Кулинарная студия', 'Аспаздық студия', 'Culinary studio', 'Кулинарная студия', '2021-08-30 16:32:27', '2021-08-30 16:32:27');
+INSERT INTO `translates` VALUES (11, 'halls', 'Залы', 'Залдар', 'Halls', 'Залы', '2021-08-30 16:33:47', '2021-08-30 16:33:47');
+INSERT INTO `translates` VALUES (12, 'type_halls', 'Типы залов', 'Зал түрлері', 'Hall types', 'Типы залов', '2021-08-30 16:35:13', '2021-08-30 16:35:13');
+INSERT INTO `translates` VALUES (13, 'site', 'Сайт', 'Сайт', 'Site', 'Сайт', '2021-08-30 16:35:57', '2021-08-30 16:35:57');
+INSERT INTO `translates` VALUES (14, 'bar', 'Бар', 'Бар', 'Bar', 'Бар', '2021-08-30 16:36:28', '2021-08-30 16:36:28');
+INSERT INTO `translates` VALUES (15, 'cabins', 'Кабины', 'Кабиналар', 'Cabins', 'Кабины', '2021-08-30 16:37:36', '2021-08-30 16:37:36');
+INSERT INTO `translates` VALUES (16, 'translates', 'Переводы', 'Аудармалар', 'Translations', 'Переводы', '2021-08-30 16:38:18', '2021-08-30 16:38:18');
+INSERT INTO `translates` VALUES (17, 'home', 'Главная', 'Yй', 'Home', 'Главная', '2021-08-30 16:39:07', '2021-08-30 16:39:07');
+INSERT INTO `translates` VALUES (18, 'categories', 'Категории', 'Санаттар', 'Categories', 'Категории', '2021-08-30 16:40:37', '2021-08-30 16:40:37');
+INSERT INTO `translates` VALUES (19, 'pages', 'Страницы', 'Беттер', 'Pages', 'Страницы', '2021-08-30 16:41:42', '2021-08-30 16:41:42');
+INSERT INTO `translates` VALUES (20, 'sections', 'Разделы', 'Бөлімдер', 'Sections', 'Разделы', '2021-08-30 16:42:10', '2021-08-30 16:42:10');
+INSERT INTO `translates` VALUES (21, 'orders', 'Заказы', 'Тапсырыстар', 'Orders', 'Заказы', '2021-08-30 16:42:47', '2021-08-30 16:42:47');
+INSERT INTO `translates` VALUES (22, 'features', 'Особенности', 'Ерекшеліктер', 'Features', 'Особенности', '2021-08-30 16:43:33', '2021-08-30 16:43:33');
+INSERT INTO `translates` VALUES (23, 'galleries', 'Галерея', 'Галерея', 'Gallery', 'Галерея', '2021-08-30 16:44:19', '2021-08-30 16:44:19');
+INSERT INTO `translates` VALUES (24, 'bars', 'Бары', 'Барлар', 'Bars', 'Бары', '2021-08-30 16:44:55', '2021-08-30 16:44:55');
+INSERT INTO `translates` VALUES (25, 'kitchens', 'Кухни', 'Ас үй', 'Kitchens', 'Кухни', '2021-08-30 16:45:28', '2021-08-30 16:45:28');
+INSERT INTO `translates` VALUES (26, 'cat_menu', 'Категории меню', 'Мәзір санаттары', 'Menu categories', 'Категории меню', '2021-08-30 16:46:23', '2021-08-30 16:46:23');
+INSERT INTO `translates` VALUES (27, 'dish', 'Блюдо', 'Ыдыс', 'Dish', 'Блюдо', '2021-08-30 16:46:56', '2021-08-30 16:46:56');
+INSERT INTO `translates` VALUES (28, 'dishes', 'Блюда', 'Ыдыс -аяқ', 'Dishes', 'Блюда', '2021-08-30 16:47:29', '2021-08-30 16:47:29');
+INSERT INTO `translates` VALUES (29, 'kitchen', 'Кухня', 'Ас үй', 'Kitchen', 'Кухня', '2021-08-30 16:48:09', '2021-08-30 16:48:09');
+INSERT INTO `translates` VALUES (30, 'select_kitchen', 'Выберите кухню', 'Асүйді таңдаңыз', 'Choose a kitchen', 'Выберите кухню', '2021-08-30 16:48:51', '2021-08-30 16:48:51');
+INSERT INTO `translates` VALUES (31, 'select_cat', 'Выберите категорию', 'Санатты таңдаңыз', 'Select a category', 'Выберите категорию', '2021-08-30 16:49:39', '2021-08-30 16:49:39');
+INSERT INTO `translates` VALUES (32, 'select_cabin', 'Выберите кабину', 'Кабинаны таңдаңыз', 'Select a cab', 'Выберите кабину', '2021-08-30 16:50:23', '2021-08-30 16:50:23');
+INSERT INTO `translates` VALUES (33, 'compound', 'Состав', 'Құрамы', 'Compound', 'Состав', '2021-08-30 16:51:06', '2021-08-30 16:51:06');
+INSERT INTO `translates` VALUES (34, 'price', 'Цена', 'Бағасы', 'Price', 'Цена', '2021-08-30 16:52:35', '2021-08-30 16:52:35');
+INSERT INTO `translates` VALUES (35, 'page', 'Страница', 'Бет', 'Page', 'Страница', '2021-08-30 16:53:28', '2021-08-30 16:53:28');
+INSERT INTO `translates` VALUES (36, 'category', 'Категория', 'Санат', 'Category', 'Категория', '2021-08-30 16:53:55', '2021-08-30 16:53:55');
+INSERT INTO `translates` VALUES (37, 'section', 'Раздел', 'Бөлім', 'Chapter', 'Раздел', '2021-08-30 16:55:40', '2021-08-30 16:55:40');
+INSERT INTO `translates` VALUES (38, 't_action', 'Действия', 'Әрекеттер', 'Actions', 'Действия', '2021-08-30 16:57:05', '2021-08-30 16:57:05');
+INSERT INTO `translates` VALUES (39, 'go_to', 'Перейти', 'Бару', 'Go to', 'Перейти', '2021-08-30 16:57:54', '2021-08-30 16:57:54');
+INSERT INTO `translates` VALUES (40, 't_name', 'Название', 'Название', 'Name', 'Название', '2021-08-30 16:58:44', '2021-08-30 16:58:44');
+INSERT INTO `translates` VALUES (41, 't_desc', 'Описание', 'Сипаттама', 'Description', 'Описание', '2021-08-30 16:59:30', '2021-08-30 16:59:30');
+INSERT INTO `translates` VALUES (42, 't_edit', 'Редактировать', 'Өңдеу', 'Edit', 'Редактировать', '2021-08-30 17:00:12', '2021-08-30 17:00:12');
+INSERT INTO `translates` VALUES (43, 't_delete', 'Удалить', 'Жою', 'Delete', 'Удалить', '2021-08-30 17:01:21', '2021-08-30 17:01:21');
+INSERT INTO `translates` VALUES (44, 't_chef', 'Шеф-повар', 'Басшы', 'Chef', 'Шеф-повар', '2021-08-30 17:02:12', '2021-08-30 17:02:12');
+INSERT INTO `translates` VALUES (45, 'select_type', 'Выберите тип', 'Түрді таңдаңыз', 'Select type', 'Выберите тип', '2021-08-30 17:03:01', '2021-08-30 17:03:01');
+INSERT INTO `translates` VALUES (46, 'select_bar', 'Выберите бар', 'Жолақты таңдаңыз', 'Choose a bar', 'Выберите бар', '2021-08-30 17:03:50', '2021-08-30 17:03:50');
+INSERT INTO `translates` VALUES (47, 'type', 'Тип', 'Түрі', 'Type', 'Тип', '2021-08-30 17:04:27', '2021-08-30 17:04:27');
+INSERT INTO `translates` VALUES (48, 'date_publish', 'Дата публикации', 'Жарияланған күні', 'Date of publication', 'Дата публикации', '2021-08-30 17:05:31', '2021-08-30 17:05:31');
+INSERT INTO `translates` VALUES (49, 'top', 'Тема', 'Тақырып', 'Theme', 'Тема', '2021-08-30 17:06:40', '2021-08-30 17:06:40');
+INSERT INTO `translates` VALUES (50, 'bg', 'Задний фон', 'Фон', 'Background', 'Задний фон', '2021-08-30 17:07:56', '2021-08-30 17:07:56');
+INSERT INTO `translates` VALUES (51, 'f_info', 'Общие сведения', 'Негізгі ақпарат', 'General information', 'Общие сведения', '2021-08-30 17:08:40', '2021-08-30 17:08:40');
+INSERT INTO `translates` VALUES (52, 'address', 'Адрес', 'Мекенжай', 'Address', 'Адрес', '2021-08-30 17:09:26', '2021-08-30 17:09:26');
+INSERT INTO `translates` VALUES (53, 'phone', 'Телефон', 'Телефон', 'Telephone', 'Телефон', '2021-08-30 17:10:00', '2021-08-30 17:10:00');
+INSERT INTO `translates` VALUES (54, 'phones', 'Телефоны', 'Телефондар', 'Phones', 'Телефоны', '2021-08-30 17:10:41', '2021-08-30 17:10:41');
+INSERT INTO `translates` VALUES (55, 'ph_main', 'Основной', 'Негізгі', 'Basic', 'Основной', '2021-08-30 17:12:05', '2021-08-30 17:12:05');
+INSERT INTO `translates` VALUES (56, 'ph_adm', 'Администрация', 'Әкімшілік', 'Administration', 'Администрация', '2021-08-30 17:13:45', '2021-08-30 17:13:45');
+INSERT INTO `translates` VALUES (57, 'ph_ds', 'Служба доставки', 'Жеткізу қызметі', 'Delivery service', 'Служба доставки', '2021-08-30 17:15:25', '2021-08-30 17:15:25');
+INSERT INTO `translates` VALUES (58, 'email', 'E-mail', 'E-mail', 'E-mail', 'E-mail', '2021-08-30 17:15:57', '2021-08-30 17:15:57');
+INSERT INTO `translates` VALUES (59, 'wh', 'Время работы', 'Жұмыс уақыты', 'Working hours', 'Время работы', '2021-08-30 17:16:37', '2021-08-30 17:16:37');
+INSERT INTO `translates` VALUES (60, 'start', 'Начало', 'Бастау', 'Start', 'Начало', '2021-08-30 17:17:23', '2021-08-30 17:17:23');
+INSERT INTO `translates` VALUES (61, 'end', 'Конец', 'Соңы', 'End', 'Конец', '2021-08-30 17:17:56', '2021-08-30 17:17:56');
+INSERT INTO `translates` VALUES (62, 'add_record', 'Создание', 'Шығармашылық', 'Creation', 'Создание', '2021-08-30 17:19:15', '2021-08-30 17:19:15');
+INSERT INTO `translates` VALUES (63, 'edit_record', 'Редактирование', 'Өңдеу', 'Edit', 'Редактирование', '2021-08-30 17:19:47', '2021-08-30 17:19:47');
+INSERT INTO `translates` VALUES (64, 'create', 'Новая запись', 'Жаңа жазба', 'New entry', 'Новая запись', '2021-08-30 17:20:33', '2021-08-30 17:20:33');
+INSERT INTO `translates` VALUES (65, 'save', 'Сохранить', 'Сақтау', 'Save', 'Сохранить', '2021-08-30 17:21:04', '2021-08-30 17:21:04');
+INSERT INTO `translates` VALUES (66, 'upload', 'Загрузить', 'Жүктеу', 'Upload', 'Загрузить', '2021-08-30 17:21:37', '2021-08-30 17:21:37');
+INSERT INTO `translates` VALUES (67, 'look', 'Посмотреть', 'Қараңыз', 'Look', 'Посмотреть', '2021-08-30 17:22:20', '2021-08-30 17:22:20');
+INSERT INTO `translates` VALUES (68, 'image', 'Изображение', 'Кескін', 'Image', 'Изображение', '2021-08-30 17:22:45', '2021-08-30 17:22:45');
+INSERT INTO `translates` VALUES (69, 'photo', 'Фото', 'Фото', 'Photo', 'Фото', '2021-08-30 17:23:14', '2021-08-30 17:23:14');
+INSERT INTO `translates` VALUES (70, 'nofile', 'Файл не выбран', 'Таңдалған файл жоқ', 'No file selected', 'Файл не выбран', '2021-08-30 17:23:51', '2021-08-30 17:23:51');
+INSERT INTO `translates` VALUES (71, 'note', 'Примечание', 'Ескерту', 'Note', 'Примечание', '2021-08-30 17:24:25', '2021-08-30 17:24:25');
+INSERT INTO `translates` VALUES (72, 'comment', 'Комментарий', 'Пікір', 'Comment', 'Комментарий', '2021-08-30 17:25:41', '2021-08-30 17:25:41');
+INSERT INTO `translates` VALUES (73, 'intro', 'Вводный текст', 'Кіріспе мәтін', 'Introductory text', 'Вводный текст', '2021-08-30 17:26:21', '2021-08-30 17:26:21');
+INSERT INTO `translates` VALUES (74, 'signature', 'Подпись', 'Қолтаңба', 'Signature', 'Подпись', '2021-08-30 17:26:55', '2021-08-30 17:26:55');
+INSERT INTO `translates` VALUES (75, 'more', 'Подробнее', 'Толығырақ', 'More', 'Подробнее', '2021-08-30 17:27:27', '2021-08-30 17:27:27');
+INSERT INTO `translates` VALUES (76, 'o_menu', 'Наше меню', 'Біздің мәзір', 'Our menu', 'Наше меню', '2021-08-30 17:28:04', '2021-08-30 17:28:04');
+INSERT INTO `translates` VALUES (77, 'menu', 'Меню', 'Мәзір', 'Menu', 'Меню', '2021-08-30 17:28:38', '2021-08-30 17:28:38');
+INSERT INTO `translates` VALUES (78, 'buy', 'Купить', 'Сатып алу', 'Buy', 'Купить', '2021-08-30 17:32:09', '2021-08-30 17:32:09');
+INSERT INTO `translates` VALUES (79, 'further', 'Далее', 'Әрі қарай', 'Further', 'Далее', '2021-08-30 17:32:57', '2021-08-30 17:32:57');
+INSERT INTO `translates` VALUES (80, 'back', 'Вернуться', 'Артқа', 'Back', 'Вернуться', '2021-08-30 17:33:43', '2021-08-30 17:33:43');
+INSERT INTO `translates` VALUES (81, 'gtc', 'Перейти в категорию', 'Санатқа өтіңіз', 'Go to category', 'Перейти в категорию', '2021-08-30 17:35:44', '2021-08-30 17:35:44');
+INSERT INTO `translates` VALUES (82, 'food_delivery', 'Доставка еды', 'Азық-түлік', 'Food delivery', 'Доставка еды', '2021-08-30 17:36:46', '2021-08-30 17:36:46');
+INSERT INTO `translates` VALUES (83, 'delivery', 'Доставка', 'Жеткізу', 'Delivery', 'Доставка', '2021-08-30 17:37:17', '2021-08-30 17:37:17');
+INSERT INTO `translates` VALUES (84, 'city', 'Город', 'Қала', 'City', 'Город', '2021-08-30 17:37:43', '2021-08-30 17:37:43');
+INSERT INTO `translates` VALUES (85, 'address_delivery', 'Адрес доставки', 'Жеткізу мекенжайы', 'Delivery address', 'Адрес доставки', '2021-08-30 17:39:48', '2021-08-30 17:39:48');
+INSERT INTO `translates` VALUES (86, 'house', 'Дом', 'Yй', 'House', 'Дом', '2021-08-30 17:40:41', '2021-08-30 17:40:41');
+INSERT INTO `translates` VALUES (87, 'corp', 'Корпус', 'Корпус', 'Frame', 'Корпус', '2021-08-30 17:41:40', '2021-08-30 17:41:40');
+INSERT INTO `translates` VALUES (88, 'flat', 'Квартира', 'Пәтер', 'Flat', 'Квартира', '2021-08-30 17:42:17', '2021-08-30 17:42:17');
+INSERT INTO `translates` VALUES (89, 'order_in_3', 'Оформление заказа в 3 шага', 'Оформление заказа в 3 шага', 'Checkout in 3 steps', 'Оформление заказа в 3 шага', '2021-08-30 17:43:11', '2021-08-30 17:43:11');
+INSERT INTO `translates` VALUES (90, 'step', 'Шаг', 'Қадам', 'Step', 'Шаг', '2021-08-30 17:44:24', '2021-08-30 17:44:24');
+INSERT INTO `translates` VALUES (91, 'contact_data', 'Контактные данные', 'Байланыс мәліметтері', 'Contact information', 'Контактные данные', '2021-08-30 17:46:05', '2021-08-30 17:46:05');
+INSERT INTO `translates` VALUES (92, 'first_name', 'Имя', 'Аты', 'First name', 'Имя', '2021-08-30 17:47:13', '2021-08-30 17:47:13');
+INSERT INTO `translates` VALUES (93, 'last_name', 'Фамилия', 'Тегі', 'Last name', 'Фамилия', '2021-08-30 17:47:51', '2021-08-30 17:47:51');
+INSERT INTO `translates` VALUES (94, 'pay', 'Оплата', 'Төлем', 'Payment', 'Оплата', '2021-08-30 17:48:26', '2021-08-30 17:48:26');
+INSERT INTO `translates` VALUES (95, 'credit', 'Онлайн оплата картой', 'Карта арқылы онлайн төлем', 'Online payment by card', 'Онлайн оплата картой', '2021-08-30 17:49:10', '2021-08-30 17:49:10');
+INSERT INTO `translates` VALUES (96, 'cash', 'Наличными', 'Ақшалай түрде', 'Cash', 'Наличными', '2021-08-30 17:49:38', '2021-08-30 17:49:38');
+INSERT INTO `translates` VALUES (97, 'cart_count', 'В вашей корзине', 'Сіздің арбаңызда', 'In your cart', 'В вашей корзине', '2021-08-30 17:50:40', '2021-08-30 17:50:40');
+INSERT INTO `translates` VALUES (98, 'items', 'товаров', 'тауарлар', 'goods', 'товаров', '2021-08-30 17:51:16', '2021-08-30 17:51:16');
+INSERT INTO `translates` VALUES (99, 'cart_empty', 'Ваша корзина пуста', 'Cебетіңіз бос', 'Your basket is empty', 'Ваша корзина пуста', '2021-08-30 17:52:05', '2021-08-30 17:52:05');
+INSERT INTO `translates` VALUES (100, 'sum', 'Итого', 'Барлығы', 'Total', 'Итого', '2021-08-30 17:52:43', '2021-08-30 17:52:43');
+INSERT INTO `translates` VALUES (101, 'total', 'Общая сумма', 'Жалпы сома', 'Total amount', 'Общая сумма', '2021-08-30 17:53:21', '2021-08-30 17:53:21');
+INSERT INTO `translates` VALUES (102, 'to_pay', 'К оплате', 'К оплате', 'To pay', 'К оплате', '2021-08-30 17:54:06', '2021-08-30 17:54:06');
+INSERT INTO `translates` VALUES (103, 'input_phone', 'Введите номер телефона', 'Телефон нөміріңізді енгізіңіз', 'Enter your phone number', 'Введите номер телефона', '2021-08-30 17:54:49', '2021-08-30 17:54:49');
+INSERT INTO `translates` VALUES (104, 'atyrau', 'Атырау', 'Атырау', 'Atyrau', 'Атырау', '2021-08-30 17:55:18', '2021-08-30 17:55:18');
+INSERT INTO `translates` VALUES (105, 'fn_hint', 'Иван', 'Иван', 'Иван', 'Иван', '2021-08-30 17:57:29', '2021-08-30 17:57:29');
+INSERT INTO `translates` VALUES (106, 'ln_hint', 'Иванов', 'Иванов', 'Иванов', 'Иванов', '2021-08-30 17:57:50', '2021-08-30 17:57:50');
+INSERT INTO `translates` VALUES (107, 'order_in', 'Оформление заказа', 'Тапсырысты қабылдау', 'Checkout', 'Оформление заказа', '2021-08-30 18:01:41', '2021-08-30 18:01:41');
+INSERT INTO `translates` VALUES (108, 'order_more', 'Детали заказа', 'Тапсырыс мәліметтері', 'Order details', 'Детали заказа', '2021-08-30 18:02:31', '2021-08-30 18:02:31');
+INSERT INTO `translates` VALUES (109, 'order_time', 'Дата и время', 'Күн мен уақыт', 'Date and time', 'Дата и время', '2021-08-30 18:03:09', '2021-08-30 18:03:09');
+INSERT INTO `translates` VALUES (110, 'customer', 'Клиент', 'Тұтынушы', 'Customer', 'Клиент', '2021-08-30 18:04:01', '2021-08-30 18:04:29');
+INSERT INTO `translates` VALUES (111, 'order_list', 'Состав заказа', 'Тапсырыс тізімі', 'Order list', 'Состав заказа', '2021-08-30 18:05:13', '2021-08-30 18:05:13');
+INSERT INTO `translates` VALUES (112, 'order_check', 'Статус оплаты', 'Төлем жағдайы', 'Payment State', 'Статус оплаты', '2021-08-30 18:05:54', '2021-08-30 18:05:54');
+INSERT INTO `translates` VALUES (113, 'count', 'Количество', 'Саны', 'Quantity', 'Количество', '2021-08-30 18:06:33', '2021-08-30 18:06:33');
+INSERT INTO `translates` VALUES (114, 'order_card', 'Картой', 'Картой', 'By card', 'Картой', '2021-08-30 18:07:12', '2021-08-30 18:07:12');
+INSERT INTO `translates` VALUES (115, 'order_cash', 'Наличными', 'Ақшалай түрде', 'In cash', 'Наличными', '2021-08-30 18:07:56', '2021-08-30 18:07:56');
+INSERT INTO `translates` VALUES (116, 'order_code', 'Номер', 'Сан', 'Code', 'Номер', '2021-08-30 18:08:35', '2021-08-30 18:08:35');
+INSERT INTO `translates` VALUES (117, 'state', 'Статус', 'Күй', 'Status', 'Статус', '2021-08-30 18:09:07', '2021-08-30 18:09:07');
 
 -- ----------------------------
 -- Table structure for type_halls

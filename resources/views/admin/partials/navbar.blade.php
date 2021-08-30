@@ -15,7 +15,7 @@
 
         <li class="nav-item">
           <a class="nav-link" href="{{ route('home') }}">
-            {{ __('main.see') }}
+            {{ getTranslate('see') }}
           </a>
         </li>
 
@@ -26,7 +26,7 @@
 
           <div class="dropdown-menu">
             <a id="logout-link" class="dropdown-item" href="{{ route('logout') }}">
-              {{ __('main.exit') }}
+              {{ getTranslate('exit') }}
             </a>
 
             <form id="logout-form" action="{{ route('logout') }}" method="POST">

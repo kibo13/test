@@ -8,7 +8,7 @@
 
   <div class="bk-btn-group">
     <a class="btn btn-outline-primary" href="{{ route('teams.create') }}" >
-      {{ __('main.create') }}
+      {{ getTranslate('create') }}
     </a>
   </div>
 
@@ -18,9 +18,9 @@
     <thead class="thead-light">
       <tr>
         <th scope="col">#</th>
-        <th scope="col" class="w-25">{{ __('main.t_chef') }}</th>
-        <th scope="col" class="w-75">{{ __('main.t_desc') }}</th>
-        <th scope="col" class="no-sort">{{ __('main.t_action') }}</th></th>
+        <th scope="col" class="w-25">{{ getTranslate('t_chef') }}</th>
+        <th scope="col" class="w-75">{{ getTranslate('t_desc') }}</th>
+        <th scope="col" class="no-sort">{{ getTranslate('t_action') }}</th></th>
       </tr>
     </thead>
     <tbody>
@@ -47,7 +47,7 @@
             @endif
             <button
               class="bk-btn-info__triangle bk-btn-info__triangle--down"
-              title="{{ __('main.more') }}">
+              title="{{ getTranslate('more') }}">
             </button>
           </div>
         </td>
@@ -56,7 +56,7 @@
             <a
               class="bk-btn-actions__link bk-btn-actions__link--edit btn btn-warning"
               href="{{ route('teams.edit', $team) }}"
-              data-tip="{{ __('main.t_edit') }}" ></a>
+              data-tip="{{ getTranslate('t_edit') }}" ></a>
             <a
               class="bk-btn-actions__link bk-btn-actions__link--delete btn btn-danger"
               href="javascript:void(0)"
@@ -64,7 +64,7 @@
               data-table-name="team"
               data-toggle="modal"
               data-target="#bk-delete-modal"
-              data-tip="{{ __('main.t_delete') }}" ></a>
+              data-tip="{{ getTranslate('t_delete') }}" ></a>
           </div>
         </td>
       </tr>

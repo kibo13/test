@@ -1,7 +1,7 @@
 <div class="main__gallery__section section">
   <div class="container-md">
     <div class="main__gallery--inner">
-      <div class="main__section--title">{{ __('main.galleries') }}</div>
+      <div class="main__section--title">{{ getTranslate('galleries') }}</div>
       <div class="gallery__items">
         <div class="row g-3">
           @foreach (getGalleries() as $i => $gallery)

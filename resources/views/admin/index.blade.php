@@ -1,10 +1,10 @@
 @extends('admin.layouts.master')
 
-@section('title', __('main.home'))
+@section('title', getTranslate('home'))
 
 @section('content')
 <section id="home-form" class="section img-form">
-  <h2 class="mb-3"> {{ __('main.home') }}</h2>
+  <h2 class="mb-3"> {{ getTranslate('home') }}</h2>
 
   @if(session()->has('success'))
   <div class="alert alert-success" role="alert">
@@ -23,29 +23,29 @@
     <div>
       @method('PUT')
 
-      <div class="bk-form__wrapper" data-info="{{ __('main.f_info') }}">
+      <div class="bk-form__wrapper" data-info="{{ getTranslate('f_info') }}">
         <div class="bk-form__block">
 
           <!-- /.intro_ru -->
-          <h6 class="bk-form__title">{{ __('main.intro') }} [RU]</h6>
+          <h6 class="bk-form__title">{{ getTranslate('intro') }} [RU]</h6>
           <div class="bk-form__field-full mb-2">
             <textarea class="form-control tiny-mce" name="intro_ru" placeholder="Введите описание">{{ old('intro_ru', isset($home) ? $home->intro_ru : null) }}</textarea>
           </div>
 
           <!-- /.intro_en -->
-          <h6 class="bk-form__title">{{ __('main.intro') }} [EN]</h6>
+          <h6 class="bk-form__title">{{ getTranslate('intro') }} [EN]</h6>
           <div class="bk-form__field-full mb-2">
             <textarea class="form-control tiny-mce" name="intro_en" placeholder="Enter a description">{{ old('intro_en', isset($home) ? $home->intro_en : null) }}</textarea>
           </div>
 
           <!-- /.intro_kk -->
-          <h6 class="bk-form__title">{{ __('main.intro') }} [KK]</h6>
+          <h6 class="bk-form__title">{{ getTranslate('intro') }} [KK]</h6>
           <div class="bk-form__field-full mb-2">
             <textarea class="form-control tiny-mce" name="intro_kk" placeholder="Сипаттаманы енгізіңіз">{{ old('intro_kk', isset($home) ? $home->intro_kk : null) }}</textarea>
           </div>
 
           <!-- /.image -->
-          <h6 class="bk-form__title">{{ __('main.image') }}</h6>
+          <h6 class="bk-form__title">{{ getTranslate('image') }}</h6>
           <div class="bk-form__field-300">
             <div class="bk-form__file">
               <input
@@ -54,12 +54,12 @@
                 name="note"
                 type="text"
                 value="@isset($home) {{ $home->note }} @endisset"
-                placeholder="{{ __('main.nofile') }}" />
+                placeholder="{{ getTranslate('nofile') }}" />
 
               <button
                 type="button"
                 class="btn btn-primary bk-form__file--btn">
-                {{ __('main.upload') }}
+                {{ getTranslate('upload') }}
               </button>
 
               <input
@@ -77,7 +77,7 @@
       <div class="form-group">
         <button
           class="btn btn-outline-success"
-          type="submit">{{ __('main.save') }}</button>
+          type="submit">{{ getTranslate('save') }}</button>
       </div>
     </div>
   </form>

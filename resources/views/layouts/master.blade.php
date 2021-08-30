@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="{{ asset('css/hamburger.css') }}">
   <link rel="stylesheet" href="{{ asset('css/slick.css') }}" />
   <link rel="stylesheet" href="{{ asset('css/localization.css') }}" />
+  <link rel="stylesheet" href="{{ asset('css/loader.css') }}" />
 </head>
 
 <body>

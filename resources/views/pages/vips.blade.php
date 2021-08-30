@@ -33,7 +33,7 @@
             @endif
           </div>
           <div data-tab="{{ $vip->name_en }}" class="vip-button block-button">
-            {{ __('main.more') }}
+            {{ getTranslate('more') }}
           </div>
           <div class="image-bg">
             <img src="{{ asset('images/' . $vip->image) }}" alt="" />

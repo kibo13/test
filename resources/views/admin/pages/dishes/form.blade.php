@@ -6,9 +6,9 @@
 <section id="dish-form" class="section img-form valid-form">
   <h2 class="mb-3">
     @isset($dish)
-      {{ __('main.edit_record') }}
+      {{ getTranslate('edit_record') }}
     @else
-    {{ __('main.add_record') }}
+    {{ getTranslate('add_record') }}
     @endisset
   </h2>
 
@@ -27,14 +27,14 @@
         @method('PUT')
       @endisset
 
-      <div class="bk-form__wrapper" data-info="{{ __('main.f_info') }}">
+      <div class="bk-form__wrapper" data-info="{{ getTranslate('f_info') }}">
         <div class="bk-form__block">
 
           <!-- /.continent_id -->
-          <h6 class="bk-form__title">{{ __('main.kitchen') }}</h6>
+          <h6 class="bk-form__title">{{ getTranslate('kitchen') }}</h6>
           <div class="bk-form__field-300 mb-2">
             <select class="form-control" id="continent_id" name="continent_id">
-              <option disabled selected>{{ __('main.select_kitchen') }}</option>
+              <option disabled selected>{{ getTranslate('select_kitchen') }}</option>
               @foreach($continents as $continent)
               <option
                 value="{{ $continent->id }}"
@@ -64,10 +64,10 @@
           >
 
           <!-- /.assortment_id -->
-          <h6 class="bk-form__title">{{ __('main.category') }}</h6>
+          <h6 class="bk-form__title">{{ getTranslate('category') }}</h6>
           <div class="bk-form__field-300 mb-2">
             <select class="form-control" id="assortment_id" name="assortment_id">
-              <option disabled selected>{{ __('main.select_cat') }}</option>
+              <option disabled selected>{{ getTranslate('select_cat') }}</option>
               @isset($dish)
               @foreach ($dish->continent->assortments as $assortment)
               <option
@@ -89,7 +89,7 @@
           </div>
 
           <!-- /.name_ru -->
-          <h6 class="bk-form__title">{{ __('main.t_name') }} [RU]</h6>
+          <h6 class="bk-form__title">{{ getTranslate('t_name') }} [RU]</h6>
           <div class="bk-form__field-300 mb-2">
             <input
               class="form-control"
@@ -102,7 +102,7 @@
           </div>
 
           <!-- /.name_en -->
-          <h6 class="bk-form__title">{{ __('main.t_name') }} [EN]</h6>
+          <h6 class="bk-form__title">{{ getTranslate('t_name') }} [EN]</h6>
           <div class="bk-form__field-300 mb-2">
             <input
               class="form-control"
@@ -115,7 +115,7 @@
           </div>
 
           <!-- /.name_kk -->
-          <h6 class="bk-form__title">{{ __('main.t_name') }} [KK]</h6>
+          <h6 class="bk-form__title">{{ getTranslate('t_name') }} [KK]</h6>
           <div class="bk-form__field-300 mb-2">
             <input
               class="form-control"
@@ -128,7 +128,7 @@
           </div>
 
           <!-- /.image -->
-          <h6 class="bk-form__title">{{ __('main.image') }}</h6>
+          <h6 class="bk-form__title">{{ getTranslate('image') }}</h6>
           <div class="bk-form__field-300 mb-2">
             <div class="bk-form__file">
               <input
@@ -137,13 +137,13 @@
                 name="note"
                 type="text"
                 value="@isset($dish) {{ $dish->note }} @endisset"
-                placeholder="{{ __('main.nofile') }}"
+                placeholder="{{ getTranslate('nofile') }}"
                 autocomplete="off" />
 
               <button
                 type="button"
                 class="btn btn-primary bk-form__file--btn">
-                {{ __('main.upload') }}
+                {{ getTranslate('upload') }}
               </button>
 
               <input
@@ -157,7 +157,7 @@
 
           <!-- /.price -->
           <h6 class="bk-form__title">
-            {{ __('main.price') }}
+            {{ getTranslate('price') }}
             <span class="bk-small">&#8376;</span>
           </h6>
           <div class="bk-form__field-100 mb-2">
@@ -172,19 +172,19 @@
           </div>
 
           <!-- /.desc_ru -->
-          <h6 class="bk-form__title">{{ __('main.t_desc') }} [RU]</h6>
+          <h6 class="bk-form__title">{{ getTranslate('t_desc') }} [RU]</h6>
           <div class="bk-form__field-full mb-2">
             <textarea class="form-control" name="desc_ru" placeholder="Введите описание">{{ old('desc_ru', isset($dish) ? $dish->desc_ru : null) }}</textarea>
           </div>
 
           <!-- /.desc_en -->
-          <h6 class="bk-form__title">{{ __('main.t_desc') }} [EN]</h6>
+          <h6 class="bk-form__title">{{ getTranslate('t_desc') }} [EN]</h6>
           <div class="bk-form__field-full mb-2">
             <textarea class="form-control" name="desc_en" placeholder="Enter a description">{{ old('desc_en', isset($dish) ? $dish->desc_en : null) }}</textarea>
           </div>
 
           <!-- /.desc_kk -->
-          <h6 class="bk-form__title">{{ __('main.t_desc') }} [KK]</h6>
+          <h6 class="bk-form__title">{{ getTranslate('t_desc') }} [KK]</h6>
           <div class="bk-form__field-full">
             <textarea class="form-control" name="desc_kk" placeholder="Сипаттаманы енгізіңіз">{{ old('desc_kk', isset($dish) ? $dish->desc_kk : null) }}</textarea>
           </div>
@@ -195,11 +195,11 @@
       <div class="form-group">
         <button
           class="btn btn-outline-success"
-          type="submit">{{ __('main.save') }}</button>
+          type="submit">{{ getTranslate('save') }}</button>
         <a
           class="btn btn-outline-secondary"
           href="{{ route('continents.dishes.index') }}">
-          {{ __('main.back') }}
+          {{ getTranslate('back') }}
         </a>
       </div>
     </div>

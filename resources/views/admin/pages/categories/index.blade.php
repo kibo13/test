@@ -1,10 +1,10 @@
 @extends('admin.layouts.master')
 
-@section('title', __('main.sections'))
+@section('title', getTranslate('sections'))
 
 @section('content')
 <section id="category-index" class="bk-page section">
-  <h2 class="mb-3">{{ __('main.sections') }}</h2>
+  <h2 class="mb-3">{{ getTranslate('sections') }}</h2>
 
   <div class="bk-categories-table">
     <table
@@ -13,9 +13,9 @@
       <thead class="thead-light">
         <tr>
           <th scope="col">#</th>
-          <th scope="col" class="w-50">{{ __('main.section') }}</th>
-          <th scope="col" class="w-50">{{ __('main.bg') }}</th>
-          <th scope="col" class="no-sort">{{ __('main.t_action') }}</th>
+          <th scope="col" class="w-50">{{ getTranslate('section') }}</th>
+          <th scope="col" class="w-50">{{ getTranslate('bg') }}</th>
+          <th scope="col" class="no-sort">{{ getTranslate('t_action') }}</th>
         </tr>
       </thead>
       <tbody>
@@ -23,7 +23,7 @@
         <tr>
           <td scope="row">{{ $key+=1 }}</td>
           <td>
-            <a href="{{ $category->slug }}" class="" title="{{ __('main.go_to') }}">
+            <a href="{{ $category->slug }}" class="" title="{{ getTranslate('go_to') }}">
               @if(getCurrentLang() === 'ru')
               {{ $category->name_ru }}
               @elseif(getCurrentLang() === 'en')
@@ -45,7 +45,7 @@
               <a
                 class="bk-btn-actions__link bk-btn-actions__link--edit btn btn-warning"
                 href="{{ route('categories.edit', $category) }}"
-                data-tip="{{ __('main.t_edit') }}" ></a>
+                data-tip="{{ getTranslate('t_edit') }}" ></a>
               <a
                 class="bk-btn-actions__link bk-btn-actions__link--delete btn btn-danger"
                 href="javascript:void(0)"
@@ -53,7 +53,7 @@
                 data-table-name="category"
                 data-toggle="modal"
                 data-target="#bk-delete-modal"
-                data-tip="{{ __('main.t_delete') }}" ></a>
+                data-tip="{{ getTranslate('t_delete') }}" ></a>
             </div>
           </td>
         </tr>

@@ -1,14 +1,14 @@
 @extends('admin.layouts.master')
 
-@section('title', __('main.galleries'))
+@section('title', getTranslate('galleries'))
 
 @section('content')
 <section id="gallery-form" class="section img-form">
   <h2 class="mb-3">
     @isset($gallery)
-      {{ __('main.edit_record') }}
+      {{ getTranslate('edit_record') }}
     @else
-    {{ __('main.add_record') }}
+    {{ getTranslate('add_record') }}
     @endisset
   </h2>
 
@@ -27,14 +27,14 @@
         @method('PUT')
       @endisset
 
-      <div class="bk-form__wrapper" data-info="{{ __('main.f_info') }}">
+      <div class="bk-form__wrapper" data-info="{{ getTranslate('f_info') }}">
         <div class="bk-form__block">
 
           <!-- /.bar_id -->
-          <h6 class="bk-form__title">{{ __('main.bars') }}</h6>
+          <h6 class="bk-form__title">{{ getTranslate('bars') }}</h6>
           <div class="bk-form__field-300 mb-2">
             <select class="form-control" name="bar_id">
-              <option disabled selected>{{ __('main.select_bar') }}</option>
+              <option disabled selected>{{ getTranslate('select_bar') }}</option>
               @foreach($bars as $bar)
               <option
                 value="{{ $bar->id }}"
@@ -56,7 +56,7 @@
           </div>
 
           <!-- /.image -->
-          <h6 class="bk-form__title">{{ __('main.image') }}</h6>
+          <h6 class="bk-form__title">{{ getTranslate('image') }}</h6>
           <div class="bk-form__field-300 mb-2">
             <div class="bk-form__file">
               <input
@@ -65,12 +65,12 @@
                 name="note"
                 type="text"
                 value="@isset($gallery) {{ $gallery->note }} @endisset"
-                placeholder="{{ __('main.nofile') }}" />
+                placeholder="{{ getTranslate('nofile') }}" />
 
               <button
                 type="button"
                 class="btn btn-primary bk-form__file--btn">
-                {{ __('main.upload') }}
+                {{ getTranslate('upload') }}
               </button>
 
               <input
@@ -83,19 +83,19 @@
           </div>
 
           <!-- /.desc_ru -->
-          <h6 class="bk-form__title">{{ __('main.t_desc') }} [RU]</h6>
+          <h6 class="bk-form__title">{{ getTranslate('t_desc') }} [RU]</h6>
           <div class="bk-form__field-full mb-2">
             <textarea class="form-control" name="desc_ru" placeholder="Введите описание">{{ old('desc_ru', isset($gallery) ? $gallery->desc_ru : null) }}</textarea>
           </div>
 
           <!-- /.desc_en -->
-          <h6 class="bk-form__title">{{ __('main.t_desc') }} [EN]</h6>
+          <h6 class="bk-form__title">{{ getTranslate('t_desc') }} [EN]</h6>
           <div class="bk-form__field-full mb-2">
             <textarea class="form-control" name="desc_en" placeholder="Enter a description">{{ old('desc_en', isset($gallery) ? $gallery->desc_en : null) }}</textarea>
           </div>
 
           <!-- /.desc_kk -->
-          <h6 class="bk-form__title">{{ __('main.t_desc') }} [KK]</h6>
+          <h6 class="bk-form__title">{{ getTranslate('t_desc') }} [KK]</h6>
           <div class="bk-form__field-full">
             <textarea class="form-control" name="desc_kk" placeholder="Сипаттаманы енгізіңіз">{{ old('desc_kk', isset($gallery) ? $gallery->desc_kk : null) }}</textarea>
           </div>
@@ -106,11 +106,11 @@
       <div class="form-group">
         <button
           class="btn btn-outline-success"
-          type="submit">{{ __('main.save') }}</button>
+          type="submit">{{ getTranslate('save') }}</button>
         <a
           class="btn btn-outline-secondary"
           href="{{ route('bars.galleries.index') }}">
-          {{ __('main.back') }}
+          {{ getTranslate('back') }}
         </a>
       </div>
     </div>

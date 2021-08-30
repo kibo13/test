@@ -65,6 +65,10 @@ $(document).ready(function () {
       case "news":
         $("#bk-delete-form").attr("action", `${url}/${data_id}`);
         break;
+
+      case "translate":
+        $("#bk-delete-form").attr("action", `${url}/${data_id}`);
+        break;
     }
   });
 });

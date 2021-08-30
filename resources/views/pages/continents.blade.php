@@ -59,10 +59,10 @@
               {{ $continent->desc_kk }}
               @endif
             </p>
-            <p>{{ __('main.app') }}</p>
+            <p>{{ getTranslate('app') }}</p>
           </div>
           <a class="continent__button block-button" href="{{ route('deliveries.menu', $continent->id) }}">
-            {{ __('main.menu') }}
+            {{ getTranslate('menu') }}
           </a>
         </div>
       </div>

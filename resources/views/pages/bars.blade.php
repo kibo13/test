@@ -49,7 +49,7 @@
             @endif
           </div>
           <a class="bars-button block-button" href="{{ route('deliveries') }}">
-            {{ __('main.menu') }}
+            {{ getTranslate('menu') }}
           </a>
         </div>
       </div>

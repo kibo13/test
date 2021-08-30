@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', __('main.home'))
+@section('title', getTranslate('home'))
 
 @section('background-header', 'main__screen')
 @section('background-content', 'first__main')
@@ -17,7 +17,7 @@
     {!! $category->intro_kk !!}
     @endif
     <a href="{{ route('deliveries') }}" class="main__button button">
-      <span>{{ __('main.food_delivery') }}</span>
+      <span>{{ getTranslate('food_delivery') }}</span>
       <img src="{{ asset('icons/delivery-truck.svg') }}" alt="" />
     </a>
     <div class="mobile__firstScreen--elements">
@@ -112,7 +112,7 @@
                   @endif
                 </div>
                 <a class="bars-gallery__button block-button">
-                  {{ __('main.gtc') }}
+                  {{ getTranslate('gtc') }}
                 </a>
               </div>
             </div>

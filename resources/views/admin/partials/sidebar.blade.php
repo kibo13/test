@@ -4,7 +4,7 @@
       <span class="sidebar-link__logo">
         <img class="sidebar-link__icon" src="{{ asset('icons/logo.png') }}" alt="logo">
       </span>
-      <span class="sidebar-link__title">{{ __('main.admin') }}</span>
+      <span class="sidebar-link__title">{{ getTranslate('admin') }}</span>
     </a>
   </div>
 
@@ -13,7 +13,7 @@
       <a class="sidebar-list__link" href="{{ route('admin.home') }}">
         @include('assets.icons.home')
         <span class="sidebar-tip">
-          {{ __('main.home') }}
+          {{ getTranslate('home') }}
         </span>
       </a>
     </li>
@@ -22,7 +22,7 @@
         <a class="sidebar-list__link" href="{{ route('categories.index') }}">
           @include('assets.icons.template')
           <span class="sidebar-tip">
-            {{ __('main.sections') }}
+            {{ getTranslate('sections') }}
           </span>
         </a>
         @if(getCategoriesCount() != 0)
@@ -68,7 +68,7 @@
       <a class="sidebar-list__link" href="{{ route('halls.index') }}">
         @include('assets.icons.hall')
         <span class="sidebar-tip">
-          {{ __('main.halls') }}
+          {{ getTranslate('halls') }}
         </span>
       </a>
     </li>
@@ -76,7 +76,7 @@
       <a class="sidebar-list__link" href="{{ route('orders.index') }}">
         @include('assets.icons.list')
         <span class="sidebar-tip">
-          {{ __('main.orders') }}
+          {{ getTranslate('orders') }}
         </span>
       </a>
     </li>
@@ -84,7 +84,15 @@
       <a class="sidebar-list__link" href="{{ route('news.index') }}">
         @include('assets.icons.news')
         <span class="sidebar-tip">
-          {{ __('main.news') }}
+          {{ getTranslate('news') }}
+        </span>
+      </a>
+    </li>
+    <li @sbactive('translate*')>
+      <a class="sidebar-list__link" href="{{ route('translates.index') }}">
+        @include('assets.icons.lang')
+        <span class="sidebar-tip">
+          {{ getTranslate('translates') }}
         </span>
       </a>
     </li>
@@ -92,7 +100,7 @@
       <a class="sidebar-list__link" href="{{ route('users.index') }}">
         @include('assets.icons.user')
         <span class="sidebar-tip">
-          {{ __('main.profile') }}
+          {{ getTranslate('profile') }}
         </span>
       </a>
     </li>

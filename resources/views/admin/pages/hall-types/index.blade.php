@@ -1,17 +1,17 @@
 @extends('admin.layouts.master')
 
-@section('title', __('main.type_halls'))
+@section('title', getTranslate('type_halls'))
 
 @section('content')
 <section id="hall-index" class="bk-page section">
-  <h2 class="mb-3">{{ __('main.type_halls') }}</h2>
+  <h2 class="mb-3">{{ getTranslate('type_halls') }}</h2>
 
   <div class="bk-btn-group">
     <a class="btn btn-outline-primary" href="{{ route('hall-types.create') }}" >
-      {{ __('main.create') }}
+      {{ getTranslate('create') }}
     </a>
     <a class="btn btn-outline-secondary" href="{{ route('halls.index') }}">
-      {{ __('main.halls') }}
+      {{ getTranslate('halls') }}
     </a>
   </div>
 
@@ -21,8 +21,8 @@
     <thead class="thead-light">
       <tr>
         <th scope="col">#</th>
-        <th scope="col" class="w-100">{{ __('main.t_name') }}</th>
-        <th scope="col" class="no-sort">{{ __('main.t_action') }}</th>
+        <th scope="col" class="w-100">{{ getTranslate('t_name') }}</th>
+        <th scope="col" class="no-sort">{{ getTranslate('t_action') }}</th>
       </tr>
     </thead>
     <tbody>
@@ -43,7 +43,7 @@
             <a
               class="bk-btn-actions__link bk-btn-actions__link--edit btn btn-warning"
               href="{{ route('hall-types.edit', $ht) }}"
-              data-tip="{{ __('main.t_edit') }}" ></a>
+              data-tip="{{ getTranslate('t_edit') }}" ></a>
             <a
               class="bk-btn-actions__link bk-btn-actions__link--delete btn btn-danger"
               href="javascript:void(0)"
@@ -51,7 +51,7 @@
               data-table-name="hall-type"
               data-toggle="modal"
               data-target="#bk-delete-modal"
-              data-tip="{{ __('main.t_delete') }}" ></a>
+              data-tip="{{ getTranslate('t_delete') }}" ></a>
           </div>
         </td>
       </tr>

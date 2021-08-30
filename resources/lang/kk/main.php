@@ -17,6 +17,7 @@ return [
   'site'              => 'Сайт',
   'bar'               => 'Бар',
   'cabins'            => 'Кабиналар',
+  'translates'        => 'Аударады',
 
   // sections
   'home'              => 'Басты',

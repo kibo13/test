@@ -1,22 +1,22 @@
 @extends('admin.layouts.master')
 
-@section('title', __('main.orders'))
+@section('title', getTranslate('orders'))
 
 @section('content')
 <section id="order-form" class="section info-form">
   <h2 class="mb-3">
-    {{ __('main.order_more') }} #{{ $order->id }}
+    {{ getTranslate('order_more') }} #{{ $order->id }}
   </h2>
 
   <form class="bk-form" action="{{ route('orders.update', $order) }}" method="POST">
     @csrf
     @method('PUT')
 
-    <div class="bk-form__wrapper" data-info="{{ __('main.f_info') }}">
+    <div class="bk-form__wrapper" data-info="{{ getTranslate('f_info') }}">
       <div class="bk-form__block">
 
         <!-- /.date_in and time_in -->
-        <h6 class="bk-form__title">{{ __('main.order_time') }}</h6>
+        <h6 class="bk-form__title">{{ getTranslate('order_time') }}</h6>
         <div class="bk-form__field-full mb-2">
           <p class="orders-text">
             {{ getDMY($order->date_in) }}
@@ -33,7 +33,7 @@
         </div>
 
         <!-- /.address -->
-        <h6 class="bk-form__title">{{ __('main.city') }} / {{ __('main.address') }}</h6>
+        <h6 class="bk-form__title">{{ getTranslate('city') }} / {{ getTranslate('address') }}</h6>
         <div class="bk-form__field-full mb-2">
           <p class="orders-text">
             {{ $order->city }} / {{ $order->street }} {{ $order->dom }}-{{ $order->flat }}
@@ -41,16 +41,16 @@
         </div>
 
         <!-- /.order list -->
-        <h6 class="bk-form__title">{{ __('main.order_list') }}</h6>
+        <h6 class="bk-form__title">{{ getTranslate('order_list') }}</h6>
         <div class="bk-form__field-full mb-2">
           <table class="bk-table table table-bordered table-responsive mb-0">
             <thead class="thead-light">
               <tr>
                 <th>#</th>
-                <th class="w-100" style="min-width: 200px;">{{ __('main.t_name') }}</th>
-                <th class="text-center" style="min-width: 150px;">{{ __('main.count') }}</th>
-                <th class="text-center" style="min-width: 150px;">{{ __('main.price') }}</th>
-                <th class="text-center" style="min-width: 150px;">{{ __('main.sum') }}</th>
+                <th class="w-100" style="min-width: 200px;">{{ getTranslate('t_name') }}</th>
+                <th class="text-center" style="min-width: 150px;">{{ getTranslate('count') }}</th>
+                <th class="text-center" style="min-width: 150px;">{{ getTranslate('price') }}</th>
+                <th class="text-center" style="min-width: 150px;">{{ getTranslate('sum') }}</th>
               </tr>
             </thead>
             <tbody>
@@ -91,7 +91,7 @@
                     <button
                       class="bk-btn-info__triangle bk-btn-info__triangle--down"
                       type="button"
-                      title="{{ __('main.more') }}">
+                      title="{{ getTranslate('more') }}">
                     </button>
                   </div>
                 </td>
@@ -105,7 +105,7 @@
         </div>
 
         <!-- /.total -->
-        <h6 class="bk-form__title">{{ __('main.total') }}</h6>
+        <h6 class="bk-form__title">{{ getTranslate('total') }}</h6>
         <div class="bk-form__field-full mb-2">
           <p class="orders-text">
             {{ number_format($order->total, 2, ',', ' ') }} тг
@@ -113,16 +113,16 @@
         </div>
 
         <!-- /.pay -->
-        <h6 class="bk-form__title">{{ __('main.pay') }}</h6>
+        <h6 class="bk-form__title">{{ getTranslate('pay') }}</h6>
         <div class="bk-form__field-full mb-2">
           <p class="orders-text">
-            @if($order->pay == 1) {{ __('main.order_card') }} @endif
-            @if($order->pay == 2) {{ __('main.order_cash') }} @endif
+            @if($order->pay == 1) {{ getTranslate('order_card') }} @endif
+            @if($order->pay == 2) {{ getTranslate('order_cash') }} @endif
           </p>
         </div>
 
         <!-- /.status -->
-        <h6 class="bk-form__title">{{ __('main.order_check') }}</h6>
+        <h6 class="bk-form__title">{{ getTranslate('order_check') }}</h6>
         <div class="orders-control">
           <input type="hidden" name="check" value="0">
           <input
@@ -141,11 +141,11 @@
     <div class="form-group">
       <button
         class="btn btn-outline-success"
-        type="submit">{{ __('main.save') }}</button>
+        type="submit">{{ getTranslate('save') }}</button>
       <a
         class="btn btn-outline-secondary"
         href="{{ route('orders.index') }}">
-        {{ __('main.back') }}
+        {{ getTranslate('back') }}
       </a>
     </div>
   </form>

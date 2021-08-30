@@ -1,10 +1,10 @@
 @extends('admin.layouts.master')
 
-@section('title', __('main.orders'))
+@section('title', getTranslate('orders'))
 
 @section('content')
 <section id="order-index" class="bk-page section info-form">
-  <h2 class="mb-3">{{ __('main.orders') }}</h2>
+  <h2 class="mb-3">{{ getTranslate('orders') }}</h2>
 
   <div class="bk-orders-table">
     <table
@@ -13,13 +13,13 @@
       <thead class="thead-light">
         <tr>
           <th scope="col">#</th>
-          <th scope="col" class="w-25" style="min-width: 100px;">{{ __('main.order_code') }}</th>
-          <th scope="col" class="w-25" style="min-width: 150px;">{{ __('main.order_time') }}</th>
+          <th scope="col" class="w-25" style="min-width: 100px;">{{ getTranslate('order_code') }}</th>
+          <th scope="col" class="w-25" style="min-width: 150px;">{{ getTranslate('order_time') }}</th>
           <th scope="col" class="w-25" style="min-width: 200px;">{{ __('main.customer') }}</th>
-          <th scope="col" class="w-25" style="min-width: 150px;">{{ __('main.sum') }}</th>
-          <th scope="col" style="min-width: 70px;">{{ __('main.pay') }}</th>
-          <th scope="col" style="min-width: 100px;">{{ __('main.state') }}</th>
-          <th scope="col" class="no-sort">{{ __('main.t_action') }}</th>
+          <th scope="col" class="w-25" style="min-width: 150px;">{{ getTranslate('sum') }}</th>
+          <th scope="col" style="min-width: 70px;">{{ getTranslate('pay') }}</th>
+          <th scope="col" style="min-width: 100px;">{{ getTranslate('state') }}</th>
+          <th scope="col" class="no-sort">{{ getTranslate('t_action') }}</th>
         </tr>
       </thead>
       <tbody>
@@ -41,7 +41,7 @@
               <span class="font-weight-bold">адрес:</span> {{ $order->street }} {{ $order->dom }} - {{ $order->corp }} {{ $order->flat }}
               <button
                 class="bk-btn-info__triangle bk-btn-info__triangle--down"
-                title="{{ __('main.more') }}">
+                title="{{ getTranslate('more') }}">
               </button>
             </div>
           </td>
@@ -50,11 +50,11 @@
           </td>
           <td>
             @if($order->pay == 1)
-            <span class="orders-icon" title="{{ __('main.order_card') }}">
+            <span class="orders-icon" title="{{ getTranslate('order_card') }}">
               @include('assets.icons.credit')
             </span>
             @else
-            <span class="orders-icon" title="{{ __('main.order_cash') }}">
+            <span class="orders-icon" title="{{ getTranslate('order_cash') }}">
               @include('assets.icons.cash')
             </span>
             @endif
@@ -71,7 +71,7 @@
               <a
                 class="bk-btn-actions__link bk-btn-actions__link--edit btn btn-warning"
                 href="{{ route('orders.edit', $order) }}"
-                data-tip="{{ __('main.t_edit') }}" ></a>
+                data-tip="{{ getTranslate('t_edit') }}" ></a>
               <a
                 class="bk-btn-actions__link bk-btn-actions__link--delete btn btn-danger"
                 href="javascript:void(0)"
@@ -79,7 +79,7 @@
                 data-table-name="order"
                 data-toggle="modal"
                 data-target="#bk-delete-modal"
-                data-tip="{{ __('main.t_delete') }}" ></a>
+                data-tip="{{ getTranslate('t_delete') }}" ></a>
             </div>
           </td>
         </tr>

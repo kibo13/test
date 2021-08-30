@@ -27,7 +27,7 @@
     <div class="container-md">
       <div class="row gy-3">
         <div class="col-12">
-          <div class="children-title">{{ __('main.ch_room') }}</div>
+          <div class="children-title">{{ getTranslate('ch_room') }}</div>
         </div>
         <div class="col-12 mt-4">
           <div class="children-text">
@@ -116,7 +116,7 @@
       </div>
       <div class="col-12 col-sm-6 d-flex flex-column justify-content-between">
         <div class="child-title__last mb-4">
-          {{ __('main.ch_room') }}
+          {{ getTranslate('ch_room') }}
           <div class="bars__title--line">
             <div class="center__line"></div>
           </div>

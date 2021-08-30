@@ -13,6 +13,7 @@ return [
   'site'              => 'Site',
   'bar'               => 'Bar',
   'cabins'            => 'Cabins',
+  'translates'        => 'Translates',
 
   // sections
   'home'              => 'Home',

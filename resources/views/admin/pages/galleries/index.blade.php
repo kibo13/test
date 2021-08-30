@@ -8,10 +8,10 @@
 
   <div class="bk-btn-group">
     <a class="btn btn-outline-primary" href="{{ route('bars.galleries.create') }}" >
-      {{ __('main.create') }}
+      {{ getTranslate('create') }}
     </a>
     <a class="btn btn-outline-secondary" href="{{ route('bars.index') }}" >
-      {{ __('main.bars') }}
+      {{ getTranslate('bars') }}
     </a>
   </div>
 

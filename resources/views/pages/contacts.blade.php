@@ -21,7 +21,7 @@
   <div class="container-md">
     <div class="row mb-3">
       <div class="col-12">
-        <div class="contacts-title mb-2">{{ __('main.ourc') }}</div>
+        <div class="contacts-title mb-2">{{ getTranslate('ourc') }}</div>
         <div class="contacts-text">
           @if(getCurrentLang() === 'ru')
           {{ $contact->desc_ru }}
@@ -35,7 +35,7 @@
     </div>
     <div class="row d-flex justify-content-lg-start justify-content-between gy-3">
       <div class="col-12 col-sm-4 col-lg-3">
-        <div class="inner__contacts--title">{{ __('main.ourc') }}</div>
+        <div class="inner__contacts--title">{{ getTranslate('ourc') }}</div>
         <div class="inner-number my-2">
           <a href="tel:{{ $contact->phone }}">{{ $contact->phone }}</a>
         </div>
@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="col-12 col-sm-4 col-lg-3 offset-lg-1">
-        <div class="inner__contacts--title">{{ __('main.wh') }}</div>
+        <div class="inner__contacts--title">{{ getTranslate('wh') }}</div>
         <div class="inner-day my-2">
           {{ getDayLocale($contact->day_from, 'long') }} - {{ getDayLocale($contact->day_to, 'long') }}
         </div>

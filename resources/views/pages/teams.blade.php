@@ -38,7 +38,7 @@
             @endif
           </div>
           <div class="team-prof">
-            {{ __('main.t_chef') }}
+            {{ getTranslate('t_chef') }}
           </div>
           <div class="team-desc">
             @if(getCurrentLang() === 'ru')
